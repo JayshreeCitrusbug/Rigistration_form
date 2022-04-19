@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="\style.css">
+<script src="sample.js"></script>
+</head>
+<body>
+    <h1 id="heading">Registration Form</h1>
+    <div class="container">
+        <form action="#" name="myForm" method="post" onSubmit="return formValidation();">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" autocomplete="off" name="fname" placeholder="Your name.." required>
+            <pre></pre>
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lname" placeholder="Your last name.." >
+            <pre></pre>
+            <label for="uname">User Name</label>
+            <input type="text" id="uname" name="username" placeholder="Your user name..">
+            <span id = "usrname" class="text-danger font-weight-bold"></span>
+            <pre></pre>
+            <label for="Pass">Password</label>
+            <input type="password" id="pass" name="password" placeholder="Password.." pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+            <pre></pre>
+            <label for="cpass">Confirm Password</label>
+            <input type="password" id="cpass" name="confirmpassword" placeholder="Confirm Password..">
+            <pre></pre>
+            <label for="fage">Age</label>
+            <input type="text" id="fage" name="age" placeholder="Your age..">
+            <pre></pre>
+            <label for="add">Address</label>
+            <textarea id="address" name="address" placeholder="Write address.." style="height:100px"></textarea>
+            <pre></pre>
+            <input type="reset" value="Reset">
+            <input type="submit" value="Submit">
+            
+            
+        </form>
+    </div>
+
+</body>
+</html>
