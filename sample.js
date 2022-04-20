@@ -6,7 +6,6 @@ function formValidation(){
     var cpassid = document.myForm.cpass;
     var uadd = document.myForm.address;
     var fage = document.myForm.fage;
-
     if (fname_validation(fname)) {
         if (lname_validation(lname)) {
             if (userid_validation(uname)) {
@@ -22,17 +21,42 @@ function formValidation(){
             }
         }
     }
+
+
     return false;
 }
+
+
+// function required() {
+//     var empt1 = document.myForm.fname.value;
+//     var empt2 = document.myForm.lname.value;
+//     var empt3 = document.myForm.uname.value;
+//     var empt4 = document.myForm.passid.value;
+//     var empt5 = document.myForm.cpassid.value;
+//     var empt6 = document.myForm.uadd.value;
+//     var empt7 = document.myForm.fage.value;
+//     if (empt1 === "") {
+        
+//         alert("Please enter a valid data");
+//         return false;
+//     }
+// }
+// document.getElementById("fname").addEventListener("invalid", GFGfun);
+//     function GFGfun() {
+//         alert(
+//             "Please fill out the required fields.");
+//     }
+  
 function fname_validation(fname){
     var letters = /[a-zA-Z]{2,30}$/;
-    if(fname.value.match(letters))
+    if((fname!= " ") && fname.value.match(letters))
     {
         console.log('First name is ', fname.value)
         return true;
     }
     else{
-        alert('Please enter alphabetic value in Firstname.....!! \n length of name should be grater than 2');
+
+        alert('Please enter alphabetic value in Firstname.....!! \nlength of name should be grater than 2');
         fname.focus();
         return false;
     }
@@ -46,7 +70,7 @@ function lname_validation(lname){
         return true;
     }
     else{
-        alert('Please enter alphabetic value in Lastname......!!  \n length of name should be grater than 2');
+        alert('Please enter alphabetic value in Lastname......!!  \nlength of name should be grater than 2');
         lname.focus();
         return false;
         
@@ -68,7 +92,7 @@ function userid_validation(uname){
     }
     else
     {
-        alert('Username must have @ or _ with alphabets \n length of name should be grater than 3');
+        alert('Username must have @ or _ with alphabets \nlength of name should be grater than 3');
         uname.focus();
         return false;
     }
@@ -79,19 +103,20 @@ var passwords = "";
 function passid_validation(inputtxt) {
     var paswd = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15}$/;
     if (inputtxt.value.match(paswd)) {
-        passwords = inputtxt.value
-        console.log('Password Entred ', passwords)
+        passwords = inputtxt.value;
+        console.log('Password Entred ', passwords);
         return true;
     }
-    else {
-        alert('Please Set password before submitting..!!')
+    else {    
+        alert('Please Set proper password before submitting..!!');
+        alert('Password must contain at least 1-number, 1-special character and uppercase, lowercase letters, and at least 8 or more characters');
         return false;
     }
 
 }
 
 function cpassid_validation(inputpsw) {
-    var cpaswd = inputpsw.value
+    var cpaswd = inputpsw.value;
     if (passwords == cpaswd) {
         console.log("Confirm Password" , cpaswd);
         console.log('Password Matched')
