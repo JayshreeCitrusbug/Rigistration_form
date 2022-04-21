@@ -81,7 +81,7 @@ function userid_validation(uname){
 var passwords = "";
 // [8 to 15 characters which contain at least one numeric digit and a special character
 function passid_validation(inputtxt) {
-    var paswd = /^(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[A-Z])[a-zA-Z0-9!@#$%^&*]{8,}$/;
+    var paswd = /^(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[A-Z])(?=.*[a-z])[a-zA-Z0-9!@#$%^&*]{8,}$/;
     if (inputtxt.value.match(paswd)) {
         passwords = inputtxt.value;
         console.log('Password Entred ', passwords);
