@@ -13,7 +13,9 @@ function formValidation(){
                     if (cpassid_validation(cpassid)) {
                         if (allnumeric(fage)) {
                             if (alphanumeric(uadd)) {
+                                if(success()){
 
+                                }
                             }
                         }
                     }
@@ -21,31 +23,8 @@ function formValidation(){
             }
         }
     }
-
-
     return false;
 }
-
-
-// function required() {
-//     var empt1 = document.myForm.fname.value;
-//     var empt2 = document.myForm.lname.value;
-//     var empt3 = document.myForm.uname.value;
-//     var empt4 = document.myForm.passid.value;
-//     var empt5 = document.myForm.cpassid.value;
-//     var empt6 = document.myForm.uadd.value;
-//     var empt7 = document.myForm.fage.value;
-//     if (empt1 === "") {
-        
-//         alert("Please enter a valid data");
-//         return false;
-//     }
-// }
-// document.getElementById("fname").addEventListener("invalid", GFGfun);
-//     function GFGfun() {
-//         alert(
-//             "Please fill out the required fields.");
-//     }
   
 function fname_validation(fname){
     var letters = /[a-zA-Z]{2,30}$/;
@@ -101,7 +80,7 @@ function userid_validation(uname){
 var passwords = "";
 // [8 to 15 characters which contain at least one numeric digit and a special character
 function passid_validation(inputtxt) {
-    var paswd = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15}$/;
+    var paswd = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$/;
     if (inputtxt.value.match(paswd)) {
         passwords = inputtxt.value;
         console.log('Password Entred ', passwords);
@@ -153,3 +132,6 @@ function alphanumeric(uadd) {
     }
 
 
+function success(){
+    alert("Registered successfully.");
+}
