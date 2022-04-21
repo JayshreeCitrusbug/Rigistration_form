@@ -25,9 +25,10 @@ function formValidation(){
     }
     return false;
 }
-  
+
+
 function fname_validation(fname){
-    var letters = /[a-zA-Z]{2,30}$/;
+    var letters = /[a-zA-Z" "]{2,30}$/;
     if((fname!= " ") && fname.value.match(letters))
     {
         console.log('First name is ', fname.value)
@@ -35,21 +36,21 @@ function fname_validation(fname){
     }
     else{
 
-        alert('Please enter alphabetic value in Firstname.....!! \nlength of name should be grater than 2');
+        alert('Please enter alphabetic value in Firstname.....!! \nlength of firstname should be  greater than 2');
         fname.focus();
         return false;
     }
 }
 
 function lname_validation(lname){
-    var letters = /[a-zA-Z]{2,30}$/;
+    var letters = /[a-zA-Z" "]{2,30}$/;
     if(lname.value.match(letters) && (lname!= " "))
     {
         console.log('Last name is ', lname.value);
         return true;
     }
     else{
-        alert('Please enter alphabetic value in Lastname......!!  \nlength of name should be grater than 2');
+        alert('Please enter alphabetic value in Lastname......!!  \nlength of lastname should be greater than 2');
         lname.focus();
         return false;
         
@@ -71,7 +72,7 @@ function userid_validation(uname){
     }
     else
     {
-        alert('Username must have @ or _ with alphabets \nlength of name should be grater than 3');
+        alert('Username must have @ or _ with alphabets \nlength of username should be greater than 3');
         uname.focus();
         return false;
     }
@@ -80,7 +81,7 @@ function userid_validation(uname){
 var passwords = "";
 // [8 to 15 characters which contain at least one numeric digit and a special character
 function passid_validation(inputtxt) {
-    var paswd = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$/;
+    var paswd = /^(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[A-Z])[a-zA-Z0-9!@#$%^&*]{8,}$/;
     if (inputtxt.value.match(paswd)) {
         passwords = inputtxt.value;
         console.log('Password Entred ', passwords);
